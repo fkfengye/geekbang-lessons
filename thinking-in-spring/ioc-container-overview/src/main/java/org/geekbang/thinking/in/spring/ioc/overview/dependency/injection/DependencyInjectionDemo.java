@@ -6,11 +6,17 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.Environment;
 
 /**
  * @author fankai
  * @project_name geekbang-lessons
  * @description     依赖注入
+ *      spring ioc 依赖来源
+ *          1、自定义Bean
+ *          2、容器内建Bean对象
+ *          3、容器内建依赖
+ *
  * @create 2021-03-24 21:54
  **/
 public class DependencyInjectionDemo {
@@ -23,8 +29,32 @@ public class DependencyInjectionDemo {
 //        test01(beanFactory);
 //        test02(beanFactory);
 //        test03(beanFactory);
-        test04(beanFactory);
+//        test04(beanFactory);
+        test05(beanFactory);
 
+    }
+
+
+    /**
+     * spring ioc 依赖来源
+     *      1、自定义Bean
+     *      2、容器内建Bean对象
+     *      3、容器内建依赖
+     * @param beanFactory
+     */
+    public static void test05(BeanFactory beanFactory){
+        // 1、自定义Bean
+        UserReository userReository = beanFactory.getBean("userReository2", UserReository.class);
+
+        // 2、依赖注入（内建依赖）
+        System.out.println(userReository.getBeanFactory());
+
+        // 依赖查找（查找不到会错误）
+//        System.out.println(beanFactory.getBean(BeanFactory.class));
+
+        // 3、容器内建Bean
+        Environment environment = beanFactory.getBean(Environment.class);
+        System.out.println("获取 Environment 类型的 Bean:" + environment);
     }
 
 
@@ -35,10 +65,6 @@ public class DependencyInjectionDemo {
      */
     public static void test04(BeanFactory beanFactory){
         UserReository userReository = beanFactory.getBean("userReository2", UserReository.class);
-
-        // 注入的ObjectFactory对象中是普通Bean
-        ObjectFactory<User> objectFactoryUser = userReository.getObjectFactoryUser();
-        System.out.println(objectFactoryUser.getObject());
 
         // 注入的ObjectFactory对象中是ApplicationContext
         ObjectFactory<ApplicationContext> objectFactoryContext = userReository.getObjectFactoryContext();
