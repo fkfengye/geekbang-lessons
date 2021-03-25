@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="dependency-lookup-context.xml"/>
+
+    <!-- 方式一:手动配置 -->
+    <bean id="userReository" class="org.geekbang.thinking.in.spring.ioc.overview.repository.UserReository">
+        <property name="users">
+            <util:list>
+                <ref bean="superUser"/>
+                <ref bean="user"/>
+            </util:list>
+        </property>
+    </bean>
+
+    <!-- 方式二:autowire自动注入 -->
+    <bean id="userReository2" class="org.geekbang.thinking.in.spring.ioc.overview.repository.UserReository"
+          autowire="byType">
+    </bean>
+
+</beans>
