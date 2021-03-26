@@ -30,7 +30,11 @@ spring ioc 配置元信息
     Environment抽象（Environment Abstraction）
 
 
+28 使用Spring IOC容器：选BeanFactory还是ApplicationContext？
 
+    使用Spring Ioc容器
+        BeanFactory是Spring底层IOC容器
+        ApplicationContext是具备应用特性的BeanFactory超集
 
 
 
