@@ -2,3 +2,42 @@ spring ioc 依赖来源
 1、自定义Bean
 2、容器内建Bean对象
 3、容器内建依赖
+
+
+spring ioc 配置元信息
+1、bean定义配置
+    基于xml文件
+    基于properties文件
+    基于Java注解
+    基于java Api（专题讨论）
+
+2、IOC容器配置
+    基于xml文件
+    基于Java注解
+    基于java Api（专题讨论）
+
+3、外部化属性配置
+    基于Java注解 如：@Value
+
+
+27 spring应用上下文：ApplicationContext除了IOC容器角色，还提供了哪些特性？
+    面向切面AOP
+    配置元信息（Configuration Metadata）
+    资源管理（Resources）
+    事件（Events）
+    国际化（i18n）
+    注解（Annotations）
+    Environment抽象（Environment Abstraction）
+
+
+
+
+
+
+
+
+
+
+
+
+

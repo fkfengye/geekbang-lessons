@@ -30,8 +30,24 @@ public class DependencyInjectionDemo {
 //        test02(beanFactory);
 //        test03(beanFactory);
 //        test04(beanFactory);
-        test05(beanFactory);
+//        test05(beanFactory);
+        test06();
 
+    }
+
+
+    /**
+     * BeanFactory 和 ApplicationContext 谁才是SpringIOC容器
+     */
+    public static void test06(){
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
+        UserReository userReository = beanFactory.getBean("userReository2", UserReository.class);
+
+        // 思考，为什么不相等
+        System.out.println(beanFactory == userReository.getBeanFactory());
+
+        System.out.println(beanFactory);
+        System.out.println(userReository.getBeanFactory());
     }
 
 
