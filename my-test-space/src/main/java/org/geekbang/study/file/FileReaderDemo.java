@@ -1,12 +1,6 @@
 package org.geekbang.study.file;
 
-import org.springframework.core.io.FileSystemResource;
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.FileSystem;
 import java.util.Enumeration;
 import java.util.Properties;
 
