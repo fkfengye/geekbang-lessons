@@ -6,7 +6,14 @@
 
     <groupId>org.geekbang</groupId>
     <artifactId>my-test-space</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+
+    <modules>
+        <module>lab01-rxjava-space</module>
+        <module>lab00-demo-space</module>
+    </modules>
 
 
     <properties>
@@ -16,6 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring.version>5.2.2.RELEASE</spring.version>
+        <rxjava.version>2.0.3</rxjava.version>
     </properties>
 
     <!-- Spring 依赖管理 -->
@@ -46,30 +54,15 @@
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+
+            <!-- rxjava2 -->
+            <dependency>
+                <groupId>io.reactivex.rxjava2</groupId>
+                <artifactId>rxjava</artifactId>
+                <version>${rxjava.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-
-    <dependencies>
-        <!-- Spring IoC 核心依赖 -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webflux</artifactId>
-        </dependency>
-    </dependencies>
-
 
     <build>
         <plugins>

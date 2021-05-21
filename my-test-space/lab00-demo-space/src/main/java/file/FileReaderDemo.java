@@ -1,4 +1,4 @@
-package org.geekbang.study.file;
+package file;
 
 import java.io.InputStream;
 import java.util.Enumeration;
