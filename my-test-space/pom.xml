@@ -13,6 +13,7 @@
     <modules>
         <module>lab01-rxjava-space</module>
         <module>lab00-demo-space</module>
+        <module>lab03-hystrix-space</module>
     </modules>
 
 
